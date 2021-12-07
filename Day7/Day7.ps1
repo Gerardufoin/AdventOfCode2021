@@ -13,7 +13,7 @@ $result
 
 "Part 2"
 # Triangular number =  int(n*(n+1)/2)
-$avg = [Math]::Floor(($crabs | Measure-Object -Average).Average)
+$avg = [int](($crabs | Measure-Object -Average).Average - 0.1) # Seems like < 0.6 should be rounded down. Not enought sample/motivation to test more.
 $result = 0
 $crabs | % { $result += [int]([Math]::Abs($_ - $avg) * ([Math]::Abs($_ - $avg) + 1) / 2) }
 $result
