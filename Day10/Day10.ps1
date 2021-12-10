@@ -27,4 +27,4 @@ Get-Content input.txt | % {
 	$scores += $score
 }
 $part1
-($scores | Sort-Object)[[Math]::Floor($scores.Length / 2)]
+($scores | Sort-Object)[[Math]::Floor($scores.Count / 2)]
